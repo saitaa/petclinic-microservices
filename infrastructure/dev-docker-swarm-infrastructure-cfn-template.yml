@@ -6,6 +6,7 @@ Description: >
   with custom security group allowing SSH (22), HTTP (80) UDP (4789, 7946), 
   and TCP(2377, 7946, 8080) connections from anywhere.
   User needs to select appropriate key name when launching the template.
+
 Parameters:
   KeyPairName:
     Description: Enter the name of your Key Pair for SSH connections.
@@ -85,7 +86,7 @@ Resources:
               - Key: app-stack-name
                 Value: !Sub ${AWS::StackName}
               - Key: environment
-                Value: dev
+                Value: qa
   DockerInstance1:
     Type: AWS::EC2::Instance
     DependsOn:
@@ -179,3 +180,4 @@ Outputs:
     Value: !Sub 
       - ${PublicAddress}
       - PublicAddress: !GetAtt DockerInstance5.PublicDnsName
+  
