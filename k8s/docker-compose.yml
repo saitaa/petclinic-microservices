@@ -49,7 +49,7 @@ services:
      - 8080:8080
     labels:
       kompose.image-pull-secret: "regcred"
-      kompose.service.expose: "www.saitcatkal.com"
+      kompose.service.expose: "sait-rancher.saitcatkal.com"
       kompose.service.type: "nodeport"
   
   tracing-server:

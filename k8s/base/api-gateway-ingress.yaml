@@ -4,7 +4,7 @@ metadata:
   annotations:
     kompose.cmd: kompose convert -f k8s/docker-compose.yml -o k8s/base
     kompose.image-pull-secret: regcred
-    kompose.service.expose: pedclinicdt.saitcatkal.com
+    kompose.service.expose: sait-rancher.saitcatkal.com
     kompose.service.type: nodeport
     kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
@@ -13,7 +13,7 @@ metadata:
   name: api-gateway
 spec:
   rules:
-    - host: pedclinicdt.saitcatkal.com
+    - host: sait-rancher.saitcatkal.com
       http:
         paths:
           - backend:

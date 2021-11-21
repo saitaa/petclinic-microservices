@@ -1,4 +1,3 @@
-# kustomization.yml
 namespace: "petclinic-staging-ns"
 bases:
 - ../base

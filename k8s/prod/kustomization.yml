@@ -1,4 +1,3 @@
-# kustomization.yml
 namespace: "petclinic-prod-ns"
 bases:
 - ../base

@@ -4,7 +4,7 @@ metadata:
   annotations:
     kompose.cmd: kompose convert -f k8s/docker-compose.yml -o k8s/base
     kompose.image-pull-secret: regcred
-    kompose.service.expose: pedclinicdt.saitcatkal.com
+    kompose.service.expose: sait-rancher.saitcatkal.com
     kompose.service.type: nodeport
     kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
@@ -22,7 +22,7 @@ spec:
       annotations:
         kompose.cmd: kompose convert -f k8s/docker-compose.yml -o k8s/base
         kompose.image-pull-secret: regcred
-        kompose.service.expose: pedclinicdt.saitcatkal.com
+        kompose.service.expose: sait-rancher.saitcatkal.com
         kompose.service.type: nodeport
         kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
@@ -38,10 +38,9 @@ spec:
       imagePullSecrets:
         - name: regcred
       restartPolicy: Always
-      
+      # for all other microservices except config-server and discovery-server
       initContainers:
       - name: init-discovery-server
         image: busybox
         command: ['sh', '-c', 'until nc -z discovery-server:8761; do echo waiting for discovery-server; sleep 2; done;']
-
 status: {}

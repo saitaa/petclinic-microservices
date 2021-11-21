@@ -35,10 +35,9 @@ spec:
             - containerPort: 3306
           resources: {}
       restartPolicy: Always
-  
+      # for all other microservices except config-server and discovery-server
       initContainers:
       - name: init-discovery-server
         image: busybox
         command: ['sh', '-c', 'until nc -z discovery-server:8761; do echo waiting for discovery-server; sleep 2; done;']
-
 status: {}
