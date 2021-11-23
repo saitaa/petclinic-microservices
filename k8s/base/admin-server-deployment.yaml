@@ -34,7 +34,6 @@ spec:
       imagePullSecrets:
         - name: regcred
       restartPolicy: Always
-      # for all other microservices except config-server and discovery-server
       initContainers:
       - name: init-discovery-server
         image: busybox
